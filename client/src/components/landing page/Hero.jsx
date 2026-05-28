@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
     return (
         <section className="relative h-screen flex items-center overflow-hidden">
@@ -33,13 +35,13 @@ function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition transform hover:scale-105">
+                        <Link to="/login" className="bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition transform hover:scale-105 inline-block text-center">
                             Get Started
-                        </button>
+                        </Link>
 
-                        <button className="border border-white/70 px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition">
+                        <Link to="/provider/register" className="border border-white/70 px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition inline-block text-center">
                             Become a Service Provider
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

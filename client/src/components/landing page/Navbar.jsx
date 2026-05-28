@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -66,10 +67,10 @@ function Navbar() {
                     className={`hidden md:flex items-center gap-4 transition-colors duration-300
                     ${scrolled ? "text-gray-700" : "text-white"}`}
                 >
-                    <button className="hover:text-blue-500">Login</button>
-                    <button className="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">
+                    <Link to="/login" className="hover:text-blue-500">Login</Link>
+                    <Link to="/register" className="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">
                         Register
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -96,8 +97,12 @@ function Navbar() {
                             <a href="#why-serviceo" onClick={handleNavClick} className="hover:text-blue-600">Why Serviceo</a>
                         </li>
                         <hr />
-                        <li className="text-blue-600 cursor-pointer">Login</li>
-                        <li className="text-blue-600 cursor-pointer">Register</li>
+                        <li className="text-blue-600 cursor-pointer">
+                            <Link to="/login" onClick={handleNavClick}>Login</Link>
+                        </li>
+                        <li className="text-blue-600 cursor-pointer">
+                            <Link to="/register" onClick={handleNavClick}>Register</Link>
+                        </li>
                     </ul>
                 </div>
             )}
